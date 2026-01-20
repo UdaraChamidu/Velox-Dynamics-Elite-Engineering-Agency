@@ -6,6 +6,7 @@ import PublicNav from '../../components/navigation/PublicNav';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import FloatingShapes from '../../components/ui/FloatingShapes';
+import ServiceComparison from '../../components/ui/ServiceComparison';
 import { useData } from '../../contexts/DataContext';
 
 const Pricing = () => {
@@ -104,6 +105,19 @@ const Pricing = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Service Comparison Table */}
+      <section className="py-16 px-6 bg-muted/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Compare All Features</h2>
+            <p className="text-muted-foreground text-lg">
+              See exactly what's included in each plan
+            </p>
+          </div>
+          <ServiceComparison />
         </div>
       </section>
 

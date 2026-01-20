@@ -63,6 +63,49 @@
     --color-muted: #334155; /* slate-700 */
   }
 
+  .light {
+    /* Primary Colors - Light Theme */
+    --color-primary: #9333ea; /* purple-600 */
+    --color-primary-foreground: #ffffff;
+    
+    /* Secondary Colors */
+    --color-secondary: #db2777; /* pink-600 */
+    --color-secondary-foreground: #ffffff;
+    
+    /* Accent Colors */
+    --color-accent: #ec4899; /* pink-500 */
+    --color-accent-foreground: #ffffff;
+    
+    /* Background Colors */
+    --color-background: #ffffff; /* white */
+    --color-foreground: #0f172a; /* slate-900 - Dark text */
+    
+    /* Surface Colors */
+    --color-card: #f8fafc; /* slate-50 - Light surface */
+    --color-card-foreground: #0f172a; /* slate-900 */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #0f172a; /* slate-900 */
+    
+    /* Muted Colors */
+    --color-muted: #f1f5f9; /* slate-100 */
+    --color-muted-foreground: #475569; /* slate-600 */
+    
+    /* Border & Input */
+    --color-border: #e2e8f0; /* slate-200 */
+    --color-input: #f8fafc; /* slate-50 */
+    --color-ring: #9333ea; /* purple-600 */
+    
+    /* Status Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #ffffff;
+    --color-warning: #d97706; /* amber-600 */
+    --color-warning-foreground: #ffffff;
+    --color-error: #dc2626; /* red-600 */
+    --color-error-foreground: #ffffff;
+    --color-destructive: #dc2626; /* red-600 */
+    --color-destructive-foreground: #ffffff;
+  }
+
   * {
     @apply border-border;
   }

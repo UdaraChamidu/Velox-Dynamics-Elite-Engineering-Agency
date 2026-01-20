@@ -16,6 +16,8 @@ import PublicNav from '../../components/navigation/PublicNav';
 import FloatingShapes from '../../components/ui/FloatingShapes';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
+import StatsCounter from '../../components/ui/StatsCounter';
+import ClientLogos from '../../components/ui/ClientLogos';
 import { useData } from '../../contexts/DataContext';
 
 const Home = () => {
@@ -292,6 +294,12 @@ const Home = () => {
           </div>
         </section>
       )}
+
+      {/* Stats Counter */}
+      <StatsCounter />
+
+      {/* Client Logos */}
+      <ClientLogos />
 
       {/* CTA Section */}
       <section className="py-20 px-6 relative z-10 bg-gradient-to-br from-purple-900/20 to-pink-900/20">

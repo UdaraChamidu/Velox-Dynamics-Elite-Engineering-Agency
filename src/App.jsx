@@ -18,6 +18,7 @@ import FAQ from './pages/public/FAQ';
 import CaseStudies from './pages/public/CaseStudies';
 import MaintenanceMode from './pages/public/MaintenanceMode';
 import ComingSoon from './pages/public/ComingSoon';
+import BudgetEstimator from './pages/public/BudgetEstimator';
 
 // Error Pages
 import NotFound from './pages/error/NotFound';
@@ -80,6 +81,7 @@ const AppRoutes = () => {
       <Route path="/case-studies" element={<CaseStudies />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/faq" element={<FAQ />} />
+      <Route path="/budget-calculator" element={<BudgetEstimator />} />
       <Route path="/maintenance" element={<MaintenanceMode />} />
       <Route path="/coming-soon" element={<ComingSoon />} />
       <Route path="/login" element={<Login />} />

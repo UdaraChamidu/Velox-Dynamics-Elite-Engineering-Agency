@@ -18,6 +18,7 @@ const PublicNav = () => {
     { name: 'Blog', path: '/blog' },
     { name: 'Case Studies', path: '/case-studies' },
     { name: 'Pricing', path: '/pricing' },
+    { name: 'Budget Calculator', path: '/budget-calculator' },
     { name: 'FAQ', path: '/faq' },
     { name: 'The Pack', path: '/team' },
   ];

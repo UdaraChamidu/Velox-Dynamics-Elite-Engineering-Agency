@@ -19,6 +19,8 @@ const PublicNav = () => {
     { name: 'Case Studies', path: '/case-studies' },
     { name: 'Pricing', path: '/pricing' },
     { name: 'Budget Calculator', path: '/budget-calculator' },
+    { name: 'ROI Calculator', path: '/roi-calculator' },
+    { name: 'Timeline', path: '/timeline-estimator' },
     { name: 'FAQ', path: '/faq' },
     { name: 'The Pack', path: '/team' },
   ];

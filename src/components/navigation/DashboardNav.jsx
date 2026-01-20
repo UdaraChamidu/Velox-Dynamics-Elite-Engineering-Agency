@@ -11,7 +11,8 @@ import {
   Settings, 
   Users, 
   Inbox,
-  LogOut
+  LogOut,
+  MessageSquare
 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import NotificationBell from '../ui/NotificationBell';
@@ -25,6 +26,7 @@ const DashboardNav = ({ children }) => {
   const userLinks = [
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { name: 'My Requests', path: '/dashboard/my-requests', icon: FileText },
+    { name: 'Messages', path: '/dashboard/messages', icon: MessageSquare },
     { name: 'Notifications', path: '/dashboard/notifications', icon: Bell },
     { name: 'Settings', path: '/dashboard/settings', icon: Settings },
   ];

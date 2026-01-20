@@ -27,6 +27,7 @@ import SubmitProposal from './pages/dashboard/SubmitProposal';
 import MyRequests from './pages/dashboard/MyRequests';
 import Notifications from './pages/dashboard/Notifications';
 import Settings from './pages/dashboard/Settings';
+import Messages from './pages/dashboard/Messages';
 
 // Admin Pages
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -118,6 +119,14 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute>
             <Settings />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/messages"
+        element={
+          <ProtectedRoute>
+            <Messages />
           </ProtectedRoute>
         }
       />

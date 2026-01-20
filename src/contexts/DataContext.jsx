@@ -428,6 +428,8 @@ export const DataProvider = ({ children }) => {
   const [testimonials, setTestimonials] = useState([]);
   const [requests, setRequests] = useState([]);
   const [proposals, setProposals] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [conversations, setConversations] = useState([]);
 
   // Load data from localStorage on mount
   useEffect(() => {
@@ -435,11 +437,15 @@ export const DataProvider = ({ children }) => {
     const storedTestimonials = localStorage.getItem('velox_testimonials');
     const storedRequests = localStorage.getItem('velox_requests');
     const storedProposals = localStorage.getItem('velox_proposals');
+    const storedMessages = localStorage.getItem('velox_messages');
+    const storedConversations = localStorage.getItem('velox_conversations');
 
     setProjects(storedProjects ? JSON.parse(storedProjects) : INITIAL_PROJECTS);
     setTestimonials(storedTestimonials ? JSON.parse(storedTestimonials) : INITIAL_TESTIMONIALS);
     setRequests(storedRequests ? JSON.parse(storedRequests) : []);
     setProposals(storedProposals ? JSON.parse(storedProposals) : []);
+    setMessages(storedMessages ? JSON.parse(storedMessages) : []);
+    setConversations(storedConversations ? JSON.parse(storedConversations) : []);
   }, []);
 
   // Save to localStorage whenever data changes
@@ -462,6 +468,14 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('velox_proposals', JSON.stringify(proposals));
   }, [proposals]);
+
+  useEffect(() => {
+    localStorage.setItem('velox_messages', JSON.stringify(messages));
+  }, [messages]);
+
+  useEffect(() => {
+    localStorage.setItem('velox_conversations', JSON.stringify(conversations));
+  }, [conversations]);
 
   const addRequest = (request) => {
     const newRequest = {
@@ -507,6 +521,62 @@ export const DataProvider = ({ children }) => {
 
   const getUserProposals = (userId) => {
     return proposals.filter(prop => prop.userId === userId);
+  };
+
+  // Message Management Functions
+  const sendMessage = (message) => {
+    const newMessage = {
+      ...message,
+      id: `msg-${Date.now()}`,
+      timestamp: new Date().toISOString(),
+      read: false
+    };
+    setMessages(prev => [...prev, newMessage]);
+
+    // Update or create conversation
+    const conversationId = message.conversationId || `${message.senderId}-${message.recipientId}`;
+    setConversations(prev => {
+      const existing = prev.find(c => c.id === conversationId);
+      if (existing) {
+        return prev.map(c => 
+          c.id === conversationId 
+            ? { ...c, lastMessage: newMessage.text, lastMessageTime: newMessage.timestamp, unreadCount: (c.unreadCount || 0) + 1 }
+            : c
+        );
+      } else {
+        return [...prev, {
+          id: conversationId,
+          participants: [message.senderId, message.recipientId],
+          lastMessage: newMessage.text,
+          lastMessageTime: newMessage.timestamp,
+          unreadCount: 1
+        }];
+      }
+    });
+
+    return newMessage;
+  };
+
+  const getConversationMessages = (conversationId) => {
+    return messages.filter(msg => msg.conversationId === conversationId).sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+  };
+
+  const getUserConversations = (userId) => {
+    return conversations.filter(conv => conv.participants.includes(userId));
+  };
+
+  const markMessagesAsRead = (conversationId, userId) => {
+    setMessages(prev => prev.map(msg => 
+      msg.conversationId === conversationId && msg.recipientId === userId
+        ? { ...msg, read: true }
+        : msg
+    ));
+
+    setConversations(prev => prev.map(conv => 
+      conv.id === conversationId
+        ? { ...conv, unreadCount: 0 }
+        : conv
+    ));
   };
 
   // Search function for global content search
@@ -574,6 +644,8 @@ export const DataProvider = ({ children }) => {
     testimonials,
     requests,
     proposals,
+    messages,
+    conversations,
     addRequest,
     updateRequest,
     deleteRequest,
@@ -581,6 +653,10 @@ export const DataProvider = ({ children }) => {
     updateProposal,
     getUserRequests,
     getUserProposals,
+    sendMessage,
+    getConversationMessages,
+    getUserConversations,
+    markMessagesAsRead,
     blogPosts: INITIAL_BLOG_POSTS,
     caseStudies: INITIAL_CASE_STUDIES,
     pricingPlans: PRICING_PLANS,

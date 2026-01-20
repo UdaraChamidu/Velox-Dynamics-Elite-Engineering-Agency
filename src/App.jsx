@@ -28,6 +28,9 @@ import MyRequests from './pages/dashboard/MyRequests';
 import Notifications from './pages/dashboard/Notifications';
 import Settings from './pages/dashboard/Settings';
 import Messages from './pages/dashboard/Messages';
+import Calendar from './pages/dashboard/Calendar';
+import Payment from './pages/dashboard/Payment';
+import PaymentHistory from './pages/dashboard/PaymentHistory';
 
 // Admin Pages
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -127,6 +130,30 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute>
             <Messages />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/calendar"
+        element={
+          <ProtectedRoute>
+            <Calendar />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/payment"
+        element={
+          <ProtectedRoute>
+            <Payment />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/payment/history"
+        element={
+          <ProtectedRoute>
+            <PaymentHistory />
           </ProtectedRoute>
         }
       />

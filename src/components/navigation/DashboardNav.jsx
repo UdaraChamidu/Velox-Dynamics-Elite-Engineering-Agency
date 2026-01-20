@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import NotificationBell from '../ui/NotificationBell';
+import ThemeToggle from '../ui/ThemeToggle';
 
 const DashboardNav = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -116,6 +117,7 @@ const DashboardNav = ({ children }) => {
             </p>
           </div>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <NotificationBell />
           </div>
         </div>

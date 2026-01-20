@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Menu, X, Zap, Search } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import SearchBar from '../ui/SearchBar';
+import ThemeToggle from '../ui/ThemeToggle';
 
 const PublicNav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -56,6 +57,9 @@ const PublicNav = () => {
             <Search className="w-4 h-4" />
             Search
           </button>
+
+          {/* Theme Toggle */}
+          <ThemeToggle />
 
           {/* Contact button */}
           <Link

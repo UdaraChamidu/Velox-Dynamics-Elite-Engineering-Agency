@@ -16,9 +16,16 @@ import BlogPost from './pages/public/BlogPost';
 import Pricing from './pages/public/Pricing';
 import FAQ from './pages/public/FAQ';
 import CaseStudies from './pages/public/CaseStudies';
+import MaintenanceMode from './pages/public/MaintenanceMode';
+import ComingSoon from './pages/public/ComingSoon';
 
 // Error Pages
 import NotFound from './pages/error/NotFound';
+import ServerError from './pages/error/ServerError';
+
+// Global Components
+import CookieConsent from './components/ui/CookieConsent';
+import LiveChat from './components/ui/LiveChat';
 
 // Dashboard Pages
 import UserDashboard from './pages/dashboard/UserDashboard';
@@ -73,6 +80,8 @@ const AppRoutes = () => {
       <Route path="/case-studies" element={<CaseStudies />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/faq" element={<FAQ />} />
+      <Route path="/maintenance" element={<MaintenanceMode />} />
+      <Route path="/coming-soon" element={<ComingSoon />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
@@ -197,6 +206,8 @@ function App() {
         <DataProvider>
           <NotificationProvider>
             <AppRoutes />
+            <CookieConsent />
+            <LiveChat />
           </NotificationProvider>
         </DataProvider>
       </AuthProvider>

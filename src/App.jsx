@@ -10,6 +10,15 @@ import Portfolio from './pages/public/Portfolio';
 import Team from './pages/public/Team';
 import Login from './pages/public/Login';
 import Register from './pages/public/Register';
+import Contact from './pages/public/Contact';
+import Blog from './pages/public/Blog';
+import BlogPost from './pages/public/BlogPost';
+import Pricing from './pages/public/Pricing';
+import FAQ from './pages/public/FAQ';
+import CaseStudies from './pages/public/CaseStudies';
+
+// Error Pages
+import NotFound from './pages/error/NotFound';
 
 // Dashboard Pages
 import UserDashboard from './pages/dashboard/UserDashboard';
@@ -54,6 +63,12 @@ const AppRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/team" element={<Team />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
+      <Route path="/case-studies" element={<CaseStudies />} />
+      <Route path="/pricing" element={<Pricing />} />
+      <Route path="/faq" element={<FAQ />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
@@ -133,8 +148,8 @@ const AppRoutes = () => {
         }
       />
 
-      {/* 404 Redirect */}
-      <Route path="*" element={<Navigate to="/" replace />} />
+      {/* 404 Page */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

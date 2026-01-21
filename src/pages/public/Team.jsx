@@ -48,7 +48,7 @@ const Team = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">The Pack</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">The <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Pack</span></h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Silent. Focused. Precise. Meet the wolves behind Velox Dynamics.
             </p>

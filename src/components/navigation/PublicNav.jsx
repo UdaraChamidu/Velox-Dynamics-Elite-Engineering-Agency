@@ -37,7 +37,7 @@ const PublicNav = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
           <img 
-            src="/logo.png" 
+            src="/logo-192.png" 
             alt="Velox Dynamics Logo" 
             className="h-10 w-auto transition-all duration-250 hover:scale-105"
           />

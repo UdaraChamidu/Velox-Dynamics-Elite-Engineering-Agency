@@ -57,16 +57,21 @@ const DashboardNav = ({ children }) => {
         {/* Logo */}
         <div className="dashboard-sidebar-header">
           <Link to="/">
-            <img 
-              src="/logo.png" 
-              alt="Velox Dynamics" 
-              className="h-14 w-auto hover:scale-105 transition-all duration-250"
-            />
+            <div className="left-10 flex items-center gap-8 mt-10 " >
+              <img 
+                src="/logo-192.png" 
+                alt="Velox Dynamics" 
+                className="h-14 w-auto hover:scale-105 transition-all duration-250"
+              />
+              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 hidden sm:block">
+              Velox Dynamics
+            </span>
+            </div>
           </Link>
         </div>
 
         {/* Navigation Links */}
-        <nav className="dashboard-sidebar-nav">
+        <nav className="dashboard-sidebar-nav mt-10">
           {links.map((link) => {
             const Icon = link.icon;
             return (

@@ -43,13 +43,20 @@ const Login = () => {
         className="w-full max-w-md relative z-10"
       >
         {/* Logo */}
-        <Link to="/" className="flex items-center justify-center mb-8">
-          <img 
-            src="/logo.png" 
-            alt="Velox Dynamics" 
-            className="h-20 w-auto hover:scale-105 transition-all duration-250"
-          />
-        </Link>
+        <div className="flex items-center gap-4 mt-2 mb-2" >
+          <Link to="/" className="flex items-center">
+            <div className="ml-18 flex items-center gap-4 mt-2 mb-2" >
+              <img 
+                src="/logo-192.png" 
+                alt="Velox Dynamics" 
+                className="h-20 w-auto hover:scale-105 transition-all duration-250"
+              />
+              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 hidden sm:block">
+                Velox Dynamics
+              </span>
+            </div>
+          </Link>
+        </div>
 
         {/* Login Card */}
         <div className="bg-card rounded-xl border border-border p-8 glow-md">

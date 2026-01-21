@@ -15,11 +15,11 @@ const PublicNav = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Case Studies', path: '/case-studies' },
-    { name: 'Pricing', path: '/pricing' },
-    { name: 'Blog', path: '/blog' },
     { name: 'Team', path: '/team' },
+    { name: 'Pricing', path: '/pricing' },
+    { name: 'Case Studies', path: '/case-studies' },
     { name: 'FAQ', path: '/faq' },
+    { name: 'Blog', path: '/blog' },
   ];
 
   const toolsLinks = [

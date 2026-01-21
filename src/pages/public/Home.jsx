@@ -123,29 +123,8 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Floating Tech Icons */}
+          {/* Floating Tech Icons - REMOVED */}
           <div className="absolute inset-0 pointer-events-none">
-            <motion.div
-              className="absolute top-20 left-10"
-              animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              <Brain className="w-16 h-16 text-primary/30" />
-            </motion.div>
-            <motion.div
-              className="absolute top-40 right-10"
-              animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-            >
-              <Cpu className="w-20 h-20 text-secondary/30" />
-            </motion.div>
-            <motion.div
-              className="absolute bottom-20 left-1/4"
-              animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, delay: 2 }}
-            >
-              <Eye className="w-14 h-14 text-primary/30" />
-            </motion.div>
           </div>
         </div>
       </section>

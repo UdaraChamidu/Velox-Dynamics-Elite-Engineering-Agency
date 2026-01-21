@@ -99,6 +99,21 @@ const PublicNav = () => {
 
           <ThemeToggle />
 
+          
+          {isAuthenticated ? (
+            <Link to="/dashboard">
+              <button className="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg transition-all font-medium">
+                Dashboard
+              </button>
+            </Link>
+          ) : (
+            <Link to="/auth">
+              <button className="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg transition-all font-medium">
+                Login
+              </button>
+            </Link>
+          )}
+
           <Link to="/contact">
             <button className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:glow-md transition-all font-medium">
               Contact
@@ -150,6 +165,20 @@ const PublicNav = () => {
                   Contact Us
                 </button>
               </Link>
+              
+              {isAuthenticated ? (
+                <Link to="/dashboard" className="mt-4" onClick={() => setMobileMenuOpen(false)}>
+                  <button className="w-full px-6 py-3 border border-primary text-primary rounded-lg font-medium">
+                    Dashboard
+                  </button>
+                </Link>
+              ) : (
+                <Link to="/auth" className="mt-4" onClick={() => setMobileMenuOpen(false)}>
+                  <button className="w-full px-6 py-3 border border-primary text-primary rounded-lg font-medium">
+                    Login
+                  </button>
+                </Link>
+              )}
             </div>
 
             {/* Close button */}

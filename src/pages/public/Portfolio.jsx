@@ -31,7 +31,7 @@ const Portfolio = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Portfolio</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6"> Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Portfolio</span></h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Explore our cutting-edge projects showcasing AI, automation, and innovation.
             </p>

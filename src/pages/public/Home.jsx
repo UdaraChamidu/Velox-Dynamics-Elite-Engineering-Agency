@@ -106,7 +106,7 @@ const Home = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600">
               Engineering Speed.<br />Mastering Intelligence.
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground mt-6 mb-8 max-w-3xl mx-auto">
               Elite AI, Computer Vision, and Automation solutions crafted by the Silent Wolf pack.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -150,6 +150,28 @@ const Home = () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="py-20 px-6 relative z-10 bg-card/30 border-y border-border/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">
+              We Are <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Velox Dynamics</span>
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+              We are a collective of elite engineers, AI architects, and creative problem solvers dedicated to pushing the boundaries of what's possible. Velox Dynamics stands at the intersection of speed and intelligence.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Our mission is simple: to engineer systems that are not just functional, but exceptional. Whether it's advanced computer vision, autonomous robotics, or high-scale web platforms, we build the technology that powers the future.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Services Grid */}
       <section className="py-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
@@ -159,7 +181,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Expertise</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Expertise</span></h2>
             <p className="text-xl text-muted-foreground">
               Cutting-edge solutions for the modern age
             </p>
@@ -199,7 +221,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Future Horizons</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Future <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Horizons</span></h2>
             <p className="text-xl text-muted-foreground">
               Expanding into uncharted territories
             </p>
@@ -241,7 +263,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Client Testimonials</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Client <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Testimonials</span></h2>
               <p className="text-xl text-muted-foreground">
                 What our partners say about us
               </p>

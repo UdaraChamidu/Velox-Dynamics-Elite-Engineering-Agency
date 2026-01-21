@@ -178,7 +178,7 @@
   }
 
   .public-navigation-container {
-    @apply h-full flex items-center justify-between px-6 max-w-7xl mx-auto;
+    @apply h-full w-full flex items-center justify-between px-6;
   }
 
   .public-navigation-logo {

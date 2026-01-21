@@ -99,6 +99,11 @@ const PublicNav = () => {
 
           <ThemeToggle />
 
+          <Link to="/contact">
+            <button className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:glow-md transition-all font-medium">
+              Contact
+            </button>
+          </Link>
           
           {isAuthenticated ? (
             <Link to="/dashboard">
@@ -114,11 +119,7 @@ const PublicNav = () => {
             </Link>
           )}
 
-          <Link to="/contact">
-            <button className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:glow-md transition-all font-medium">
-              Contact
-            </button>
-          </Link>
+          
         </div>
 
         {/* Mobile Menu Toggle */}

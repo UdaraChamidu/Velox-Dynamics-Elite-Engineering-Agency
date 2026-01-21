@@ -112,7 +112,7 @@ const PublicNav = () => {
               </button>
             </Link>
           ) : (
-            <Link to="/auth">
+            <Link to="/login">
               <button className="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg transition-all font-medium">
                 Login
               </button>

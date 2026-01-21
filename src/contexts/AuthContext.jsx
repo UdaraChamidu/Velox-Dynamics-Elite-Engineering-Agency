@@ -44,6 +44,18 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('velox_user');
       }
     }
+
+    // Load users from storage
+    const storedUsers = localStorage.getItem('velox_users');
+    if (storedUsers) {
+      try {
+        setUsers(JSON.parse(storedUsers));
+      } catch (e) {
+        // If error parsing, keep mock users but don't crash
+        console.error('Failed to parse stored users', e);
+      }
+    }
+
     setLoading(false);
   }, []);
 

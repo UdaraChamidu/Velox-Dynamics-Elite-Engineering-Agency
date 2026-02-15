@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import PublicNav from '../../components/navigation/PublicNav';
 import Card from '../../components/ui/Card';
+import TiltCard from '../../components/ui/TiltCard';
 import FloatingShapes from '../../components/ui/FloatingShapes';
 import Footer from '../../components/navigation/Footer';
 import ServiceRequestWizard from '../../components/forms/ServiceRequestWizard';
@@ -49,33 +50,39 @@ const Contact = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4">
-                <Mail className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-bold mb-2">Email</h3>
-              <a href="mailto:contact@veloxdynamics.com" className="text-muted-foreground hover:text-primary transition-colors">
-                contact@veloxdynamics.com
-              </a>
-            </Card>
+            <TiltCard>
+              <Card className="p-6 h-full">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold mb-2">Email</h3>
+                <a href="mailto:contact@veloxdynamics.com" className="text-muted-foreground hover:text-primary transition-colors">
+                  contact@veloxdynamics.com
+                </a>
+              </Card>
+            </TiltCard>
 
-            <Card className="p-6">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4">
-                <Phone className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-bold mb-2">Phone</h3>
-              <a href="tel:+15551234567" className="text-muted-foreground hover:text-primary transition-colors">
-                +1 (555) 123-4567
-              </a>
-            </Card>
+            <TiltCard>
+              <Card className="p-6 h-full">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4">
+                  <Phone className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold mb-2">Phone</h3>
+                <a href="tel:+15551234567" className="text-muted-foreground hover:text-primary transition-colors">
+                  +1 (555) 123-4567
+                </a>
+              </Card>
+            </TiltCard>
 
-            <Card className="p-6">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4">
-                <MapPin className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-bold mb-2">Location</h3>
-              <p className="text-muted-foreground">Global Remote Team</p>
-            </Card>
+            <TiltCard>
+              <Card className="p-6 h-full">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4">
+                  <MapPin className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold mb-2">Location</h3>
+                <p className="text-muted-foreground">Global Remote Team</p>
+              </Card>
+            </TiltCard>
           </div>
 
           <div className="mt-8 text-center">

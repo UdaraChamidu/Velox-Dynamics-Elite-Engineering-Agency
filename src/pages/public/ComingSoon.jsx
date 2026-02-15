@@ -50,7 +50,7 @@ const ComingSoon = () => {
           {/* Logo */}
           <div className="mb-8">
             <img 
-              src="/logo.png" 
+              src="/logo-192.png" 
               alt="Velox Dynamics" 
               className="h-20 w-auto mx-auto"
             />

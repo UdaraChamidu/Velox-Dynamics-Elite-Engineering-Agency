@@ -12,12 +12,16 @@ import {
   Zap,
   Lock
 } from 'lucide-react';
+
 import PublicNav from '../../components/navigation/PublicNav';
 import FloatingShapes from '../../components/ui/FloatingShapes';
+import Footer from '../../components/navigation/Footer';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import StatsCounter from '../../components/ui/StatsCounter';
 import ClientLogos from '../../components/ui/ClientLogos';
+import TestimonialMarquee from '../../components/ui/TestimonialMarquee';
+import TiltCard from '../../components/ui/TiltCard';
 import { useData } from '../../contexts/DataContext';
 
 const Home = () => {
@@ -177,13 +181,15 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="p-6 h-full">
-                    <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 glow-md`}>
-                      <Icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                    <p className="text-muted-foreground">{service.description}</p>
-                  </Card>
+                  <TiltCard>
+                    <Card className="p-6 h-full">
+                      <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 glow-md`}>
+                        <Icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                      <p className="text-muted-foreground">{service.description}</p>
+                    </Card>
+                  </TiltCard>
                 </motion.div>
               );
             })}
@@ -232,67 +238,23 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials Marquee */}
       {testimonials.length > 0 && (
-        <section className="py-20 px-6 relative z-10">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-20 bg-muted/10 relative z-10">
+          <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Client <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Testimonials</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Client <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Stories</span></h2>
               <p className="text-xl text-muted-foreground">
-                What our partners say about us
+                Trusted by innovative companies worldwide
               </p>
             </motion.div>
-
-            <div className="relative">
-              <Card className="p-8 md:p-12">
-                <motion.div
-                  key={currentTestimonial}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="text-4xl text-primary mb-4">"</div>
-                  <p className="text-lg md:text-xl text-muted-foreground mb-6">
-                    {testimonials[currentTestimonial].content}
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-xl font-bold">
-                      {testimonials[currentTestimonial].name[0]}
-                    </div>
-                    <div>
-                      <div className="font-semibold">{testimonials[currentTestimonial].name}</div>
-                      <div className="text-sm text-muted-foreground">{testimonials[currentTestimonial].role}</div>
-                    </div>
-                  </div>
-                </motion.div>
-              </Card>
-
-              {testimonials.length > 1 && (
-                <div className="flex justify-center gap-4 mt-6">
-                  <button
-                    onClick={prevTestimonial}
-                    className="w-10 h-10 rounded-full bg-card border border-border hover:border-primary hover:glow-sm transition-all"
-                    aria-label="Previous testimonial"
-                  >
-                    <ChevronLeft className="w-6 h-6 mx-auto" />
-                  </button>
-                  <button
-                    onClick={nextTestimonial}
-                    className="w-10 h-10 rounded-full bg-card border border-border hover:border-primary hover:glow-sm transition-all"
-                    aria-label="Next testimonial"
-                  >
-                    <ChevronRight className="w-6 h-6 mx-auto" />
-                  </button>
-                </div>
-              )}
-            </div>
           </div>
+          
+          <TestimonialMarquee testimonials={testimonials} />
         </section>
       )}
 
@@ -318,11 +280,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-border relative z-10">
-        <div className="max-w-7xl mx-auto text-center text-muted-foreground">
-          <p>© 2024 Velox Dynamics. All rights reserved. Built with precision and passion.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

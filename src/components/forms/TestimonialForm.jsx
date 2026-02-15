@@ -28,7 +28,6 @@ const TestimonialForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // In production, send to backend
-    console.log('Testimonial submitted:', formData);
     setSubmitted(true);
     
     // Reset after 3 seconds

@@ -53,8 +53,8 @@ const Calendar = () => {
   };
 
   const handleSelectEvent = (event) => {
-    // Show event details modal (to be implemented)
-    console.log('Selected event:', event);
+    // TODO: Show event details modal
+    return;
   };
 
   const handleBooking = (bookingData) => {

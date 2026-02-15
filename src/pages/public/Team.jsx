@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import { Users, Mail } from 'lucide-react';
 import PublicNav from '../../components/navigation/PublicNav';
 import FloatingShapes from '../../components/ui/FloatingShapes';
+import Footer from '../../components/navigation/Footer';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
+import TiltCard from '../../components/ui/TiltCard';
 
 const Team = () => {
   const teamMembers = [
@@ -63,14 +65,16 @@ const Team = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="p-6 text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-3xl font-bold glow-md">
-                    {member.avatar}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
-                  <p className="text-muted-foreground text-sm">{member.bio}</p>
-                </Card>
+                <TiltCard>
+                  <Card className="p-6 text-center h-full">
+                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-3xl font-bold glow-md">
+                      {member.avatar}
+                    </div>
+                    <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                    <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
+                    <p className="text-muted-foreground text-sm">{member.bio}</p>
+                  </Card>
+                </TiltCard>
               </motion.div>
             ))}
           </div>
@@ -105,6 +109,8 @@ const Team = () => {
           </motion.div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

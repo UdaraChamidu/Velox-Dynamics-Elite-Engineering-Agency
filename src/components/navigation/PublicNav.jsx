@@ -174,7 +174,7 @@ const PublicNav = () => {
                   </button>
                 </Link>
               ) : (
-                <Link to="/auth" className="mt-4" onClick={() => setMobileMenuOpen(false)}>
+                <Link to="/login" className="mt-4" onClick={() => setMobileMenuOpen(false)}>
                   <button className="w-full px-6 py-3 border border-primary text-primary rounded-lg font-medium">
                     Login
                   </button>

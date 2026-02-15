@@ -29,6 +29,7 @@ import ServerError from './pages/error/ServerError';
 // Global Components
 import CookieConsent from './components/ui/CookieConsent';
 import LiveChat from './components/ui/LiveChat';
+import ScrollToTop from './components/ui/ScrollToTop';
 
 // Dashboard Pages
 import UserDashboard from './pages/dashboard/UserDashboard';
@@ -72,7 +73,9 @@ const ProtectedRoute = ({ children, adminOnly = false }) => {
 
 const AppRoutes = () => {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       {/* Public Routes */}
       <Route path="/" element={<Home />} />
       <Route path="/portfolio" element={<Portfolio />} />
@@ -202,6 +205,7 @@ const AppRoutes = () => {
       {/* 404 Page */}
       <Route path="*" element={<NotFound />} />
     </Routes>
+    </>
   );
 };
 

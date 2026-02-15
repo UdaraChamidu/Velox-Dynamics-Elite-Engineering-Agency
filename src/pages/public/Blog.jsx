@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import { Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
 import PublicNav from '../../components/navigation/PublicNav';
 import Card from '../../components/ui/Card';
+import TiltCard from '../../components/ui/TiltCard';
 import LoadingSkeleton from '../../components/ui/LoadingSkeleton';
 import FloatingShapes from '../../components/ui/FloatingShapes';
+import Footer from '../../components/navigation/Footer';
 import { useData } from '../../contexts/DataContext';
 
 const Blog = () => {
@@ -80,59 +82,61 @@ const Blog = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <Link to={`/blog/${post.slug}`}>
-                    <Card className="h-full hover:border-primary transition-all duration-300 group overflow-hidden">
-                      {/* Featured Badge */}
-                      {post.featured && (
-                        <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
-                          Featured
-                        </div>
-                      )}
-
-                      {/* Gradient Header */}
-                      <div className="h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center relative overflow-hidden">
-                        <motion.div
-                          className="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-pink-600/30"
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                        <Tag className="w-16 h-16 text-primary relative z-10" />
-                      </div>
-
-                      <div className="p-6">
-                        {/* Category Badge */}
-                        <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-3">
-                          {post.category}
-                        </div>
-
-                        <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                          {post.title}
-                        </h3>
-
-                        <p className="text-muted-foreground mb-4 line-clamp-2">
-                          {post.excerpt}
-                        </p>
-
-                        {/* Metadata */}
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                          <div className="flex items-center gap-1">
-                            <Calendar className="w-4 h-4" />
-                            <span>{new Date(post.publishDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                    <TiltCard>
+                      <Card className="h-full hover:border-primary transition-colors duration-300 group overflow-hidden">
+                        {/* Featured Badge */}
+                        {post.featured && (
+                          <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
+                            Featured
                           </div>
-                          <div className="flex items-center gap-1">
-                            <Clock className="w-4 h-4" />
-                            <span>{post.readTime}</span>
-                          </div>
+                        )}
+
+                        {/* Gradient Header */}
+                        <div className="h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center relative overflow-hidden">
+                          <motion.div
+                            className="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-pink-600/30"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                          <Tag className="w-16 h-16 text-primary relative z-10" />
                         </div>
 
-                        {/* Read More */}
-                        <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
-                          <span className="text-sm font-medium text-primary group-hover:underline flex items-center gap-1">
-                            Read Article
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </span>
+                        <div className="p-6">
+                          {/* Category Badge */}
+                          <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-3">
+                            {post.category}
+                          </div>
+
+                          <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                            {post.title}
+                          </h3>
+
+                          <p className="text-muted-foreground mb-4 line-clamp-2">
+                            {post.excerpt}
+                          </p>
+
+                          {/* Metadata */}
+                          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                            <div className="flex items-center gap-1">
+                              <Calendar className="w-4 h-4" />
+                              <span>{new Date(post.publishDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Clock className="w-4 h-4" />
+                              <span>{post.readTime}</span>
+                            </div>
+                          </div>
+
+                          {/* Read More */}
+                          <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
+                            <span className="text-sm font-medium text-primary group-hover:underline flex items-center gap-1">
+                              Read Article
+                              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </Card>
+                      </Card>
+                    </TiltCard>
                   </Link>
                 </motion.div>
               ))}
@@ -167,12 +171,7 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-6 border-t border-border">
-        <div className="max-w-7xl mx-auto text-center text-muted-foreground">
-          <p>© 2024 Velox Dynamics. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

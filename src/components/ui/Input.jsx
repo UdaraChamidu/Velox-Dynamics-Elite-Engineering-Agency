@@ -7,7 +7,7 @@ const Input = ({
   containerClassName = '',
   ...props 
 }) => {
-  const baseStyles = "w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:glow-sm transition-all duration-250";
+  const baseStyles = "w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:glow-sm focus:scale-[1.01] transition-all duration-250";
   const errorStyles = error ? "border-destructive focus:border-destructive" : "";
 
   return (
@@ -36,7 +36,7 @@ export const Textarea = ({
   rows = 4,
   ...props 
 }) => {
-  const baseStyles = "w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:glow-sm transition-all duration-250 resize-none";
+  const baseStyles = "w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:glow-sm focus:scale-[1.01] transition-all duration-250 resize-none";
   const errorStyles = error ? "border-destructive focus:border-destructive" : "";
 
   return (
@@ -66,7 +66,7 @@ export const Select = ({
   containerClassName = '',
   ...props 
 }) => {
-  const baseStyles = "w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:border-primary focus:glow-sm transition-all duration-250";
+  const baseStyles = "w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:border-primary focus:glow-sm focus:scale-[1.01] transition-all duration-250";
   const errorStyles = error ? "border-destructive focus:border-destructive" : "";
 
   return (

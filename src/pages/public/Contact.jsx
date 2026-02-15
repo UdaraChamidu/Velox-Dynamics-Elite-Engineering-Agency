@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import PublicNav from '../../components/navigation/PublicNav';
 import Card from '../../components/ui/Card';
 import FloatingShapes from '../../components/ui/FloatingShapes';
+import Footer from '../../components/navigation/Footer';
 import ServiceRequestWizard from '../../components/forms/ServiceRequestWizard';
 
 const Contact = () => {
@@ -87,12 +88,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-6 border-t border-border">
-        <div className="max-w-7xl mx-auto text-center text-muted-foreground">
-          <p>© 2024 Velox Dynamics. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
-import { Zap, User, Mail, Lock, AlertCircle } from 'lucide-react';
+import { Mail, Lock, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import FloatingShapes from '../../components/ui/FloatingShapes';
 import Button from '../../components/ui/Button';
@@ -59,7 +59,7 @@ const Register = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center justify-center mb-8">
           <img 
-            src="/logo.png" 
+            src="/logo-192.png" 
             alt="Velox Dynamics" 
             className="h-20 w-auto hover:scale-105 transition-all duration-250"
           />

@@ -76,7 +76,6 @@ const ServiceRequestWizard = () => {
   };
 
   const handleSubmit = () => {
-    console.log('Service request submitted:', formData);
     alert('Service request submitted successfully!');
   };
 

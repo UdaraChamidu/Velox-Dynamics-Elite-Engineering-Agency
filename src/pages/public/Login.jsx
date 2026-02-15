@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
-import { Zap, Mail, Lock, AlertCircle } from 'lucide-react';
+import { Mail, Lock, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import FloatingShapes from '../../components/ui/FloatingShapes';
 import Button from '../../components/ui/Button';
@@ -109,18 +109,7 @@ const Login = () => {
             </p>
           </div>
 
-          {/* Demo Credentials */}
-          <div className="mt-8 pt-6 border-t border-border">
-            <p className="text-xs text-muted-foreground mb-3 font-semibold">Demo Accounts:</p>
-            <div className="space-y-2 text-xs text-muted-foreground">
-              <div className="bg-muted/50 p-2 rounded">
-                <strong className="text-primary">Admin:</strong> admin@velox.com / admin123
-              </div>
-              <div className="bg-muted/50 p-2 rounded">
-                <strong className="text-secondary">Client:</strong> client@velox.com / client123
-              </div>
-            </div>
-          </div>
+
         </div>
 
         {/* Back to Home */}

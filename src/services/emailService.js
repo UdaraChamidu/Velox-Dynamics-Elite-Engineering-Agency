@@ -40,7 +40,6 @@ export const sendContactForm = async (formData) => {
     */
 
     // Temporary simulation for development
-    console.log('Contact form submitted (simulated):', formData);
     return new Promise(resolve => setTimeout(() => resolve({ status: 200 }), 1000));
   } catch (error) {
     console.error('Error sending contact form:', error);
@@ -74,7 +73,6 @@ export const subscribeNewsletter = async (email) => {
     */
 
     // Temporary simulation for development
-    console.log('Newsletter subscription (simulated):', email);
     return new Promise(resolve => setTimeout(() => resolve({ status: 200 }), 1000));
   } catch (error) {
     console.error('Error subscribing to newsletter:', error);

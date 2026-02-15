@@ -11,7 +11,7 @@ const Button = ({
   type = 'button',
   ...props 
 }) => {
-  const baseStyles = "font-semibold rounded-lg transition-all duration-250 focus-ring disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseStyles = "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-250 focus-ring disabled:opacity-50 disabled:cursor-not-allowed btn-shimmer";
   
   const variants = {
     primary: "bg-primary text-primary-foreground hover:glow-md active:scale-95",

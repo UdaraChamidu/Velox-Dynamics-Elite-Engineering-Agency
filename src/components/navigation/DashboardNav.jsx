@@ -42,7 +42,9 @@ const DashboardNav = ({ children }) => {
     { name: 'Request Hub', path: '/admin/requests', icon: Inbox },
   ];
 
-  const links = isAdmin ? [...adminLinks, ...userLinks] : userLinks;
+  const links = isAdmin 
+    ? [...adminLinks, ...userLinks.filter(link => link.path !== '/dashboard')] 
+    : userLinks;
   const isActive = (path) => location.pathname === path;
 
   const handleLogout = () => {

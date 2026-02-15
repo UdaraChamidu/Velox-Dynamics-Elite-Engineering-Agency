@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PublicNav from '../../components/navigation/PublicNav';
 import FloatingShapes from '../../components/ui/FloatingShapes';
+import Footer from '../../components/navigation/Footer';
 import Card from '../../components/ui/Card';
+import TiltCard from '../../components/ui/TiltCard';
 import Modal from '../../components/ui/Modal';
 import { useData } from '../../contexts/DataContext';
 import { ExternalLink } from 'lucide-react';
@@ -65,21 +67,23 @@ const Portfolio = () => {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card
-                    className="p-6 cursor-pointer"
-                    onClick={() => setSelectedProject(project)}
-                  >
-                    <div className="w-full h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg mb-4 flex items-center justify-center">
-                      <ExternalLink className="w-12 h-12 text-primary" />
-                    </div>
-                    <div className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-3">
-                      {project.category}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                    <p className="text-muted-foreground text-sm line-clamp-3">
-                      {project.description}
-                    </p>
-                  </Card>
+                  <TiltCard>
+                    <Card
+                      className="p-6 cursor-pointer h-full"
+                      onClick={() => setSelectedProject(project)}
+                    >
+                      <div className="w-full h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg mb-4 flex items-center justify-center">
+                        <ExternalLink className="w-12 h-12 text-primary" />
+                      </div>
+                      <div className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-3">
+                        {project.category}
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                      <p className="text-muted-foreground text-sm line-clamp-3">
+                        {project.description}
+                      </p>
+                    </Card>
+                  </TiltCard>
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -130,6 +134,8 @@ const Portfolio = () => {
           </div>
         )}
       </Modal>
+
+      <Footer />
     </div>
   );
 };

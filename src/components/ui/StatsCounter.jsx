@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 const StatsCounter = () => {
   const stats = [
-    { id: 1, end: 150, suffix: '+', label: 'Projects Completed', icon: '🚀' },
-    { id: 2, end: 50, suffix: '+', label: 'Happy Clients', icon: '😊' },
-    { id: 3, end: 8, suffix: '+', label: 'Years Experience', icon: '⭐' },
-    { id: 4, end: 99, suffix: '%', label: 'Client Satisfaction', icon: '💯' }
+    { id: 1, end: 25, suffix: '+', label: 'Projects Completed', icon: '🚀' },
+    { id: 2, end: 15, suffix: '+', label: 'Happy Clients', icon: '😊' },
+    { id: 3, end: 3, suffix: '+', label: 'Years Experience', icon: '⭐' },
+    { id: 4, end: 100, suffix: '%', label: 'Client Satisfaction', icon: '💯' }
   ];
 
   const [counts, setCounts] = useState(stats.map(() => 0));
